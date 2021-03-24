@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweenmax</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main">
+    <h1 class="header">Engineering For Tomorrow</h1>
+
+    <div class="panel">
+        <div class="box">        
+            <img class="bulb" src="image\Simple_light_bulb_graphic.png" alt="bulb">
+            <p>There are few good things about becoming an engineer</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+
+<script>
+    var tl = gsap.timeline({
+        onComplete: function() {
+            this.reverse();
+        }
+    });
+
+    tl.from(".header", {duration: 2.5, y: -250, opacity:0})
+      .from(".panel", {duration:3, y: 200,opacity: 0}, "<.5")
+      .from(".box", { duration: 2.5, ease: "back.out(1.7)", x: 500}, "<")
+      .from(".bulb", {duration: 2, y: 200, opacity: 0}, "<")
+      .from("p", {duration: 2.5, y: -50, opacity:0}, "<.5")
+      
+      
+</script>
+
+</body>
+</html>
